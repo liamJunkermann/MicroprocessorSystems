@@ -1,0 +1,10 @@
+1. What does “well behaved” mean in the context of subroutines?
+	A well behaved subroutine respects the state of registers (save for a couple) before the subroutine is run. In practice this means storing the state of all (with exceptions) registers into the stack before any operations occur.
+2. Explain how/why your subroutine is “well behaved”.
+	My subroutine saves the state of the non-parameter/in-out registers to the stack before running the subroutine's instructions, and pops them off the stack when completed. It does not mess with any of the other registers in a bad way to mess up the general running of the program.
+3. How would you test that your subroutine is well behaved?
+	
+4. Why is using repeated addition to implement multiplication such a bad idea?
+	By adding to the stack enough to implement multiplication of a particularly large number would result in a stack overflow which would cause the program to crash.
+5. What would happen to the program if a very large number of recursive calls were made, i.e. if there was very "deep" recursion?
+	If a very deep recursion occurred then a stack overflow will occur as there isn't enough space in memory to handle all the saved sets of registers.
